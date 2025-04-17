@@ -9,8 +9,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\\SOFTWARE\\VOCALOID6\\Voicebanks\\AI_Hiroshi]
 "InstallPath"="C:\\\\Program Files\\\\VOCALOID6\\\\Voicebanks\\\\AI_Hiroshi"
-"Language"="Spanish"
-"VoicebankName"="AI_Hiroshi_Voicebank"
+"VoicebankType"="Artificial Intelligence"
+"CharacterName"="AI Hiroshi"
+"Language"="Japanese"
 "SampleRate"="44100"
 "Version"="1.0.0"
 "Description"="Voicebank AI Hiroshi configurado dentro de Vocaloid6"
