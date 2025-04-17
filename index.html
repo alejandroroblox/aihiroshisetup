@@ -1,42 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Hiroshi Setup</title>
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom, #444, #666);
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #282c34, #616161);
       color: white;
       text-align: center;
       margin: 0;
       padding: 0;
     }
     header {
-      background-color: #222;
-      padding: 20px 0;
+      background-color: #20232a;
+      padding: 20px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     }
     h1 {
       font-size: 2.5em;
       margin: 0;
     }
     .content {
+      margin-top: 20px;
       padding: 20px;
     }
-    .button {
-      display: inline-block;
-      margin: 20px auto;
+    button {
       padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
+      margin: 10px;
       font-size: 1.2em;
+      background-color: #61dafb;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
-    .button:hover {
-      background-color: #45a049;
+    button:hover {
+      background-color: #21a1f1;
+    }
+    audio {
+      display: none;
     }
   </style>
 </head>
@@ -45,9 +49,13 @@
     <h1>AI Hiroshi Setup</h1>
   </header>
   <div class="content">
-    <h2>¡Bienvenido al Instalador!</h2>
-    <p>Sigue los pasos para completar la instalación de AI Hiroshi.</p>
-    <button class="button" id="next-button">Siguiente</button>
+    <h2>Bienvenido al Instalador</h2>
+    <p>Haz clic en "Siguiente" para comenzar con la configuración.</p>
+    <button id="next-button1">Siguiente</button>
+    <audio id="background-music" autoplay loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
   </div>
   <script src="renderer.js"></script>
 </body>
