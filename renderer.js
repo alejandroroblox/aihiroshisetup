@@ -7,8 +7,8 @@ nextButton.addEventListener('click', () => {
   const regContent = `
 Windows Registry Editor Version 5.00
 
-[HKEY_LOCAL_MACHINE\\SOFTWARE\\Vocaloid6\\Voicebanks\\AI_Hiroshi]
-"InstallPath"="C:\\\\Program Files\\\\Vocaloid6\\\\Voicebanks\\\\AI_Hiroshi"
+[HKEY_LOCAL_MACHINE\\SOFTWARE\\VOCALOID6\\Voicebanks\\AI_Hiroshi]
+"InstallPath"="C:\\\\Program Files\\\\VOCALOID6\\\\Voicebanks\\\\AI_Hiroshi"
 "Language"="Spanish"
 "VoicebankName"="AI_Hiroshi_Voicebank"
 "SampleRate"="44100"
