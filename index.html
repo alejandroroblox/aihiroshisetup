@@ -2,31 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Instalador de AI_Hiroshi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Hiroshi Setup</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom, #333, #666);
+      color: white;
       text-align: center;
       margin: 0;
       padding: 0;
     }
-    .content {
-      margin-top: 50px;
+    header {
+      background-color: #222;
+      padding: 20px 0;
     }
-    button {
-      margin: 20px;
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    .content {
+      padding: 20px;
+    }
+    .button {
+      display: inline-block;
+      margin: 20px auto;
       padding: 10px 20px;
-      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <div class="content" id="content">
-    <h1>Bienvenido al instalador de AI_Hiroshi</h1>
-    <p id="step-description">Presiona "Siguiente" para comenzar.</p>
-    <button id="next-button">Siguiente</button>
+  <header>
+    <h1>AI Hiroshi Setup</h1>
+  </header>
+  <div class="content">
+    <h2>¡Bienvenido al Instalador!</h2>
+    <p>Sigue los pasos para completar la instalación de AI Hiroshi.</p>
+    <button class="button" id="next-button">Siguiente</button>
   </div>
-
   <script src="renderer.js"></script>
 </body>
 </html>
