@@ -1,30 +1,30 @@
-const { ipcRenderer } = require('electron');
-
 let step = 0;
-const content = document.getElementById('content');
-const stepDescription = document.getElementById('step-description');
+const content = document.querySelector('.content');
 const nextButton = document.getElementById('next-button');
 
 nextButton.addEventListener('click', () => {
   step++;
   if (step === 1) {
-    stepDescription.textContent = "Instalando AI_Hiroshi... Por favor espera.";
+    content.innerHTML = `
+      <h2>Instalando AI Hiroshi...</h2>
+      <p>Por favor espera mientras preparamos todo.</p>
+    `;
     nextButton.disabled = true;
-    ipcRenderer.send('install');
+
+    // Simula la instalación con un retraso
+    setTimeout(() => {
+      content.innerHTML = `
+        <h2>¡Instalación Completada!</h2>
+        <p>Presiona "Finalizar" para completar el proceso.</p>
+      `;
+      nextButton.textContent = "Finalizar";
+      nextButton.disabled = false;
+    }, 3000); // Tiempo de instalación simulado
   } else if (step === 2) {
-    stepDescription.textContent = "¡Instalación completada! Presiona 'Finalizar' para cerrar.";
-    nextButton.textContent = "Finalizar";
-  } else {
-    window.close();
+    content.innerHTML = `
+      <h2>¡Gracias por instalar AI Hiroshi!</h2>
+      <p>Cierra esta ventana para salir.</p>
+    `;
+    nextButton.style.display = 'none';
   }
-});
-
-ipcRenderer.on('install-success', () => {
-  stepDescription.textContent = "AI_Hiroshi se instaló correctamente.";
-  nextButton.disabled = false;
-});
-
-ipcRenderer.on('install-failure', (event, errorMessage) => {
-  stepDescription.textContent = `Error durante la instalación: ${errorMessage}`;
-  nextButton.disabled = false;
 });
