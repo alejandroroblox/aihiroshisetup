@@ -1,30 +1,31 @@
-let step = 0;
-const content = document.querySelector('.content');
+// Selecciona el botón del HTML
 const nextButton = document.getElementById('next-button');
 
+// Añade el evento al botón
 nextButton.addEventListener('click', () => {
-  step++;
-  if (step === 1) {
-    content.innerHTML = `
-      <h2>Instalando AI Hiroshi...</h2>
-      <p>Por favor espera mientras preparamos todo.</p>
-    `;
-    nextButton.disabled = true;
+  // Contenido del archivo .reg
+  const regContent = `
+Windows Registry Editor Version 5.00
 
-    // Simula la instalación con un retraso
-    setTimeout(() => {
-      content.innerHTML = `
-        <h2>¡Instalación Completada!</h2>
-        <p>Presiona "Finalizar" para completar el proceso.</p>
-      `;
-      nextButton.textContent = "Finalizar";
-      nextButton.disabled = false;
-    }, 3000); // Tiempo de instalación simulado
-  } else if (step === 2) {
-    content.innerHTML = `
-      <h2>¡Gracias por instalar AI Hiroshi!</h2>
-      <p>Cierra esta ventana para salir.</p>
-    `;
-    nextButton.style.display = 'none';
-  }
+[HKEY_LOCAL_MACHINE\\SOFTWARE\\AI_Hiroshi]
+"InstallPath"="C:\\\\Program Files\\\\AI_Hiroshi"
+"Version"="1.0.0"
+`;
+
+  // Crear un archivo Blob con el contenido del registro
+  const blob = new Blob([regContent], { type: 'application/octet-stream' });
+
+  // Crear un enlace para descargar el archivo
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'AI_Hiroshi_Setup.reg';
+
+  // Simular un clic en el enlace para descargar el archivo
+  link.click();
+
+  // Liberar el recurso del archivo después de la descarga
+  URL.revokeObjectURL(link.href);
+
+  // Mensaje de confirmación en la consola
+  console.log("Archivo .reg generado y descargado exitosamente.");
 });
